@@ -13,6 +13,7 @@ export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#051c2d'}}>
       <div className="container-fluid">
+      <img src="https://img.icons8.com/cotton/40/000000/basketball--v1.png" alt='Bastketball Logo'/>
         <Link className="navbar-brand" to='/' style={{color: 'white'}}>NBA Chat</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -22,7 +23,7 @@ export default function Nav() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <button onClick={handleSignOut} className="btn btn-outline-danger" aria-current="page">Sign Out</button>
+                <Link class="nav-link" onClick={handleSignOut} style={{color: 'white'}}>Sign Out</Link>
               </li>
             </ul>
           </div> : <div className="collapse navbar-collapse" id="navbarNav">

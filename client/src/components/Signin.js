@@ -32,25 +32,22 @@ function Signin() {
 
                 // Save Token to Cookies and User to Local Storage
                 authenticateUser(res, () => {
-                    console.log("Success: " + JSON.stringify(res.data))
                     toast.success(`Welcome back ${res.data.user.name}!`)
                     window.location.href = '/'
                 })
 
             })
             .catch(err => {
-                console.log('Error: ' + err.response.data.error)
                 toast.error(err.response.data.error)
             })
     }
 
     const informParent = (res) => (
         authenticateUser(res, () => {
-            console.log(res)
             window.location.href = '/'
         })
     )
-    
+
 
     return (
         <div>
@@ -60,7 +57,7 @@ function Signin() {
             {isAuth() ? <Redirect to='/' /> : null}
             <div className="alert alert-dark" role="alert">
                 <h4 className="alert-heading">Sign In!</h4>
-                <p>Welcome back to the site! Thanks for visiting, you can get started by signing in. If you are new you can register <Link to='/signup'>Here</Link></p>
+                <p>Welcome back to NBA Chat! With this app you can join chat rooms for current NBA Games or your favorite teams. Thanks for visiting, you can get started by signing in. If you are new you can register <Link to='/signup'>Here</Link></p>
                 <hr />
                 <form onSubmit={createUser}>
                     <div className="row">
@@ -85,7 +82,7 @@ function Signin() {
 
 
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <button type="submit" className="btn btn-dark" style={{backgroundColor: '#051c2d'}}>Sign In!</button>
+                            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#051c2d' }}>Sign In!</button>
 
                         </div>
 
@@ -101,7 +98,7 @@ function Signin() {
                 <br />
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Google informParent={informParent}/>
+                    <Google informParent={informParent} />
                 </div>
             </div>
         </div>
