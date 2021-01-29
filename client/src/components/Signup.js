@@ -57,15 +57,15 @@ function Signup() {
             <ToastContainer />
             {isAuth() ? <Redirect to='/' /> : null}
             <div className="alert alert-dark" role="alert">
-                <h4 className="alert-heading">Sign Up!</h4>
-                <p>Welcome to NBA Chat! Thanks for visiting, you can get started by creating an account here. With this app you can join chat rooms for current NBA Games or your favorite teams. If you already have one, you can sign in <Link to='/signin'>Here</Link></p>
+                <h4 className="alert-heading" style={{color: '#016ab5'}}>Sign Up! Returning Users can Sign in <Link to='/signin' style={{color: '#016ab5'}}>Here</Link></h4>
+                <p>Welcome to NBA Chat! Thanks for visiting, you can get started by creating an account here. With this app you can join chat rooms for current NBA Games or your favorite teams.</p>
                 <hr />
                 <form onSubmit={createUser}>
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div className="input-group flex-nowrap">
-                                <span className="input-group-text" id="addon-wrapping">Name:</span>
-                                <input onChange={updateName} type="text" className="form-control" placeholder="Almost There!" aria-label="Username" aria-describedby="addon-wrapping" />
+                                <span className="input-group-text" id="addon-wrapping">Username:</span>
+                                <input onChange={updateName} type="text" className="form-control" placeholder="Choose Carefully, Other Users Will See This!" aria-label="Username" aria-describedby="addon-wrapping" />
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ function Signup() {
                         </div>
 
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <button type="submit" className="btn btn-dark">Sign Up!</button>
+                            <button type="submit" className="btn" style={{backgroundColor: '#016ab5', color: 'white'}}>Sign Up!</button>
                         </div>
                     </div>
                 </form>
@@ -103,7 +103,7 @@ function Signup() {
                 <br />
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Google informParent={informParent} />
+                    <Google informParent={informParent} text='Sign up with Google'/>
                 </div>
 
             </div>

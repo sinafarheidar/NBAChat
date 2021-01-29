@@ -23,7 +23,7 @@ export default function Nav() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link class="nav-link" onClick={handleSignOut} style={{color: 'white'}}>Sign Out</Link>
+                <Link className="nav-link" to={''} onClick={handleSignOut} style={{color: 'white'}}>Sign Out</Link>
               </li>
             </ul>
           </div> : <div className="collapse navbar-collapse" id="navbarNav">

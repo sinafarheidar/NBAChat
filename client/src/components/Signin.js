@@ -56,8 +56,8 @@ function Signin() {
             {/* If User Information is Available Redirect to '/' */}
             {isAuth() ? <Redirect to='/' /> : null}
             <div className="alert alert-dark" role="alert">
-                <h4 className="alert-heading">Sign In!</h4>
-                <p>Welcome back to NBA Chat! With this app you can join chat rooms for current NBA Games or your favorite teams. Thanks for visiting, you can get started by signing in. If you are new you can register <Link to='/signup'>Here</Link></p>
+                <h4 className="alert-heading" style={{color: '#016ab5'}}>Sign In! New Users can Sign Up <Link to='/signup' style={{color: '#016ab5'}}>Here</Link></h4>
+                <p>Welcome back to NBA Chat! With this app you can join chat rooms for current NBA Games or your favorite teams. Thanks for visiting, you can get started by signing in.</p>
                 <hr />
                 <form onSubmit={createUser}>
                     <div className="row">
@@ -82,7 +82,7 @@ function Signin() {
 
 
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#051c2d' }}>Sign In!</button>
+                            <button type="submit" className="btn" style={{backgroundColor: '#016ab5', color: 'white'}}>Sign In!</button>
 
                         </div>
 
@@ -98,7 +98,7 @@ function Signin() {
                 <br />
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Google informParent={informParent} />
+                    <Google informParent={informParent} text='Sign in with Google'/>
                 </div>
             </div>
         </div>

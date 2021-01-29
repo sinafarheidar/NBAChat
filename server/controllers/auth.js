@@ -72,11 +72,11 @@ exports.signin = (req, res) => {
 
 
 exports.googleLogin = (req, res) => {
-  const client = new OAuth2Client("930536793342-0f8mnfpur38plu17lksqfk40m7g8vdh8.apps.googleusercontent.com")
+  const client = new OAuth2Client("455738974255-t1nmmen27algfi30bm3jafoluv907o4u.apps.googleusercontent.com")
 
   const { idToken } = req.body
 
-  client.verifyIdToken({ idToken, audience: "930536793342-0f8mnfpur38plu17lksqfk40m7g8vdh8.apps.googleusercontent.com" })
+  client.verifyIdToken({ idToken, audience: "455738974255-t1nmmen27algfi30bm3jafoluv907o4u.apps.googleusercontent.com" })
     .then(response => {
       const { email_verified, name, email } = response.payload
 
@@ -92,7 +92,6 @@ exports.googleLogin = (req, res) => {
               user: { _id, email, name, role }
             })
           } else {
-            console.log('user dne creating')
             let password = email + 'secretcode'
             user = new User({ name, email, password })
 
@@ -103,7 +102,6 @@ exports.googleLogin = (req, res) => {
                   error: 'User Signup Failed'
                 })
               }
-              console.log('Creating Token')
               const token = jwt.sign({ _id: data._id }, 'secretcode', { expiresIn: '7d' })
               const { _id, email, name, role } = data
               return res.json({
