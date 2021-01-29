@@ -40,6 +40,7 @@ io.on('connection', (socket) => {
 
         if (userCheck) {
             removeUser(id)
+            console.log(`${name} Left the ${teamName} Chat`)
         }
 
         const { user } = addUser({ id: id, name: name, room: room })
@@ -59,6 +60,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('disconnectRoom', ({ name, room, id }, next) => {
+        console.log(`${name} Left the ${teamName} Chat`)
         const user = removeUser(id)
 
         if (user) {
