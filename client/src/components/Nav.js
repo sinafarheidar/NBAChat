@@ -11,7 +11,7 @@ export default function Nav() {
     })
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#051c2d'}}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#0a3556'}}>
       <div className="container-fluid">
       <img src="https://img.icons8.com/cotton/40/000000/basketball--v1.png" alt='Bastketball Logo'/>
         <Link className="navbar-brand" to='/' style={{color: 'white'}}>NBA Chat</Link>
@@ -24,6 +24,9 @@ export default function Nav() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to={''} onClick={handleSignOut} style={{color: 'white'}}>Sign Out</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={'/'} style={{color: 'white'}}>Rooms</Link>
               </li>
             </ul>
           </div> : <div className="collapse navbar-collapse" id="navbarNav">

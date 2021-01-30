@@ -1,3 +1,5 @@
 body {
     background-image: url("./nba.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

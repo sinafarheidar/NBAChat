@@ -5,16 +5,18 @@ const InChat = ({ users }) => (
     {
         users
           ? (
+            
             <div>
-              <h1>People currently chatting:</h1>
+              <br />
+              <h3 style={{color: 'white'}}>Users In The Chat:</h3>
               <div className="activeContainer">
-                <h2>
-                  {users.map(({name}) => (
-                    <div key={name} className="activeItem">
-                      Person: {name}
-                    </div>
+                
+                <ul class="list-group">
+                  {users.map(({name}) => (   
+                    <li class="list-group-item" aria-current="true">{name}</li>
                   ))}
-                </h2>
+                  </ul>
+                
               </div>
             </div>
           )

@@ -40,12 +40,11 @@ io.on('connection', (socket) => {
 
         if (userCheck) {
             removeUser(id)
-            console.log(`${name} Left the ${teamName} Chat`)
         }
 
         const { user } = addUser({ id: id, name: name, room: room })
 
-        socket.emit('message', { user: 'Admin', text: `${user.name} Welcome to the ${teamName} Room` })
+        socket.emit('message', { user: 'Admin', text: `Welcome to the ${teamName} Room` })
 
         socket.broadcast.to(user.room).emit('message', { user: 'Admin', text: `${user.name} Has Joined the Chat` })
         socket.join(user.room)
@@ -60,7 +59,6 @@ io.on('connection', (socket) => {
     })
 
     socket.on('disconnectRoom', ({ name, room, id }, next) => {
-        console.log(`${name} Left the ${teamName} Chat`)
         const user = removeUser(id)
 
         if (user) {
